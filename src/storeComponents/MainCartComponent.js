@@ -221,11 +221,11 @@ function MainCartComponent() {
                                 <table className="table table-borderless">
                                     <thead className='border-bottom border-top'>
                                         <tr className='text-center align-middle' style={{height: 60}}>
-                                            <th scope="col"><h5>Item</h5></th>
-                                            <th scope='col'>&nbsp;</th>
-                                            <th scope="col"><h5>Qty</h5></th>
-                                            <th scope="col"><h5>Price</h5></th>
-                                            <th scope="col"><h5>SubT</h5></th>
+                                            <th scope="col" style={{width: "25%"}}><h5>Item</h5></th>
+                                            <th scope='col' style={{width: "12%"}}>&nbsp;</th>
+                                            <th scope="col" style={{width: "17%"}}><h5>Qty</h5></th>
+                                            <th scope="col" style={{width: "23%"}}><h5>Price</h5></th>
+                                            <th scope="col" style={{width: "23%"}}><h5>SubT</h5></th>
                                         </tr>
                                     </thead>
                                     <CartDetails 
@@ -242,7 +242,7 @@ function MainCartComponent() {
             </div>
 
             <div className="container-fluid pt-5 pb-5" id='bottomHomeContainer'>
-                <div className="container p-3 pt-5 text-center">
+                <div className="container p-0 pt-5 text-center">
                     <CartProductsLogo />
                     {
                         mainState.products.map(item => (

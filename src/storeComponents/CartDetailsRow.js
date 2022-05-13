@@ -15,35 +15,38 @@ const CartDetailsRow = (props) => {
  
   return (
 
-        <tr key={props.currentItem.id} className='text-center align-middle'>
-            <td>{props.currentItem.name}</td>
-            <td style={{
-                    backgroundImage: `url(${props.currentItem.pic})`, 
-                    backgroundPosition: 'center',
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                    width: '60px',
-                    height: '60px'
-                    }}>        
+        <tr key={props.currentItem.id} className='text-center align-middle border-bottom'>
+            <td className='text-start'>{props.currentItem.name}</td>
+            <td 
+                style={{
+                        backgroundImage: `url(${props.currentItem.pic})`, 
+                        backgroundPosition: 'center',
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        width: '40px',
+                        height: '60px'
+                        }}>        
             </td>
-            <td className='row'>
-                <div className="col-sm-6">
-                    <CartInputBoxQuantity theState={props.actualStateTwo} cycledItem={props.currentItem} dispatchMethodBox={props.dispatchMethod}/>
-                </div>
-                <div className="col-sm-6 p-0">
-                    <div className="btn-group" role="group">
-                        <CartBtn 
-                            btnType={'button'} 
-                            btnValue={props.currentItem.id} 
-                            btnClass={'btn btn-primary btn-sm'} 
-                            mainText={'+'} 
-                            onClickFunc={addItemToCart2Handler}/>
-                        <CartBtn 
-                            btnType={'button'} 
-                            btnValue={props.currentItem.id} 
-                            btnClass={'btn btn-warning btn-sm'} 
-                            mainText={'-'} 
-                            onClickFunc={removeItemFromCart2Handler}/>
+            <td className='p-0 m-0'>
+                <div className="row m-0 p-1">
+                    <div className="col-sm-6 p-0">
+                        <CartInputBoxQuantity theState={props.actualStateTwo} cycledItem={props.currentItem} dispatchMethodBox={props.dispatchMethod}/>
+                    </div>
+                    <div className="col-sm-6 p-0">
+                        <div className="btn-group w-100 h-100" role="group">
+                            <CartBtn 
+                                btnType={'button'} 
+                                btnValue={props.currentItem.id} 
+                                btnClass={'btn btn-primary btn-sm'} 
+                                mainText={'+'} 
+                                onClickFunc={addItemToCart2Handler}/>
+                            <CartBtn 
+                                btnType={'button'} 
+                                btnValue={props.currentItem.id} 
+                                btnClass={'btn btn-secondary btn-sm'} 
+                                mainText={'-'} 
+                                onClickFunc={removeItemFromCart2Handler}/>
+                        </div>
                     </div>
                 </div>
             </td>

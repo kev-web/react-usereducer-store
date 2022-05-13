@@ -9,7 +9,7 @@
 }
 
 #topHomeContainer{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.801), rgba(32, 32, 32, 0.199)), url('https://source.unsplash.com/5fIoyoKlz7A');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.801), rgba(32, 32, 32, 0.199)), url('https://source.unsplash.com/MdmcpX2ofRk');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,7 +18,7 @@
 }
 
 #bottomHomeContainer{
-    background-image: linear-gradient(rgba(90, 88, 88, 0.096), rgba(19, 19, 19, 0.849)), url('https://source.unsplash.com/5J1bHRX1fNw');
+    background-image: linear-gradient(rgba(206, 206, 206, 0.096), rgba(20, 20, 20, 0.514)), url('https://source.unsplash.com/5J1bHRX1fNw');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
