@@ -202,27 +202,24 @@ function MainCartComponent() {
                 dispatchMethod={dispatch} 
                 actualState={mainState}
                 />
-            <div className="container-fluid p-0" id='topHomeContainer'>
+            <div className="container-fluid" id='topHomeContainer'>
 
                 <div className="container">
                     <CartTitle />
                 </div>
                 
                 <div className='container p-0 pt-5'>
-                    <div className="row">
-                        <div className="col-sm-4 p-lg-4 p-4 mt-3 mb-5" id='uploadForm'>
+                    <div className="row justify-content-around">
+                        <div className="col-sm-4 p-3 p-lg-4 mt-3 mb-5">
                             <CartFormLogo />
                             <CartForm dispatchMethod={dispatch}/>
                         </div>
-                        <div className="col-sm-1">
-
-                        </div>
-                        <div className="col-sm-7 p-0 p-lg-4 mt-3 mb-5" id='cartDetailsBox'>
+                        <div className="col-sm-7 p-2 p-lg-4 mt-3 mb-5">
                             <CartDetailsLogo actualState={mainState}/>
 
                         
                                 <table className="table table-borderless">
-                                    <thead className='tableGlassA border-bottom border-top'>
+                                    <thead className='border-bottom border-top'>
                                         <tr className='text-center align-middle' style={{height: 60}}>
                                             <th scope="col"><h5>Item</h5></th>
                                             <th scope='col'>&nbsp;</th>
@@ -245,7 +242,7 @@ function MainCartComponent() {
             </div>
 
             <div className="container-fluid pt-5 pb-5" id='bottomHomeContainer'>
-                <div className="container p-3 pt-5 text-center" id='productsCardContainer'>
+                <div className="container p-3 pt-5 text-center">
                     <CartProductsLogo />
                     {
                         mainState.products.map(item => (

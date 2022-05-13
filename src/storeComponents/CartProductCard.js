@@ -32,8 +32,8 @@ const CartProductCard = (props) => {
 
 
   return (
-    <div className="card tableGlassB m-2 border-0" style={{width:'20rem', display: "inline-block"}} key={props.loopItem.id}>
-        <img src={props.loopItem.pic} width={"100%"} className='card-img' alt='product-card-img'/>
+    <div className="card m-2 border-0" style={{width:'20rem', display: "inline-block"}} key={props.loopItem.id}>
+        <img src={props.loopItem.pic} width={"100%"} className='img-fluid card-img' alt='product-card-img'/>
         <div className="card-body overflow-auto">
             <h5 className="card-title mb-3">{props.loopItem.name}</h5>
             <p className="text-muted">{props.loopItem.id}</p>

@@ -30,11 +30,11 @@ const CartDetails = (props) => {
                          dispatchMethod={props.dispatchMethod}/>
             }
         })}
-        <tr className='text-center align-middle tableGlassB border-top border-bottom' style={{height: 60}}>
+        <tr className='text-center align-middle border-top border-bottom' style={{height: 60}}>
           <td className='text-start ps-3'>
               <CartBtn
                   btnType={'button'} 
-                  btnClass={'btn btn-secondary'} 
+                  btnClass={'btn btn-danger'} 
                   btnIcon={<CartBtnIcon iconTagClassName={'bi bi-trash'}/>} 
                   mainText={'Empty'} 
                   onClickFunc={handleEmptyCart}

@@ -41,7 +41,7 @@ const CartForm = (props) => {
 
         <CartBtn 
           btnType={'submit'} 
-          btnClass={'btn btn-success mt-3 btn-lg'} 
+          btnClass={'btn btn-success mt-3'} 
           btnIcon={<CartBtnIcon 
           iconTagClassName={'bi bi-cloud-arrow-up'}/>}  
           mainText={'Upoad'}

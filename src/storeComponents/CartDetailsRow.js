@@ -15,7 +15,7 @@ const CartDetailsRow = (props) => {
  
   return (
 
-        <tr key={props.currentItem.id} className='text-center align-middle tableGlassB'>
+        <tr key={props.currentItem.id} className='text-center align-middle'>
             <td>{props.currentItem.name}</td>
             <td style={{
                     backgroundImage: `url(${props.currentItem.pic})`, 
@@ -35,13 +35,13 @@ const CartDetailsRow = (props) => {
                         <CartBtn 
                             btnType={'button'} 
                             btnValue={props.currentItem.id} 
-                            btnClass={'btn btn-primary'} 
+                            btnClass={'btn btn-primary btn-sm'} 
                             mainText={'+'} 
                             onClickFunc={addItemToCart2Handler}/>
                         <CartBtn 
                             btnType={'button'} 
                             btnValue={props.currentItem.id} 
-                            btnClass={'btn btn-warning'} 
+                            btnClass={'btn btn-warning btn-sm'} 
                             mainText={'-'} 
                             onClickFunc={removeItemFromCart2Handler}/>
                     </div>

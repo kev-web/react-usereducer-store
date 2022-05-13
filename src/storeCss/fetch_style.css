@@ -26,28 +26,8 @@
     
 }
 
-#uploadForm{
-    /* From https://css.glass */
-    background: rgba(0, 0, 0, 0.466);
-    border-radius: 16px;
-    box-shadow: 0px 4px 30px rgba(184, 184, 184, 0.9);
-    height: 600px;
-}
-
-#cartDetailsBox{
-    background: rgba(0, 0, 0, 0.466);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(184, 184, 184, 0.9);
-}
-
-#productsCardContainer{
-    background: rgba(0, 0, 0, 0.466);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(184, 184, 184, 0.9);
-}
-
 .form-label{
-    font-size: 18px;
+    font-size: 16px;
 }
 
 table 
@@ -56,21 +36,10 @@ table
     width:100%;
 }
 
-.tableGlassA{
-    background: rgba(255, 255, 255, 0.192);
-    border-radius: 0px;
-    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9); */
-}
-
-.tableGlassB{
-    background: rgba(2, 2, 2, 0.349);
-    border-radius: 16px;
-    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9); */
-}
-
 .card{
-    box-shadow: 5px 5px 20px 1px rgba(252, 252, 252, 0.904);
-    
+    /* box-shadow: 5px 5px 20px 1px rgba(252, 252, 252, 0.904); */
+    border-radius: 16px;
+    background: rgba(14, 13, 13, 0.747);
 }
 
 .card-img{
