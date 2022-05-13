@@ -7,7 +7,6 @@ function App() {
   return (
     <div>
       <MainCartComponent />
-      this is a github test...
     </div>
   );
 }
