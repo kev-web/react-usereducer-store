@@ -1,0 +1,100 @@
+*{
+    font-family: 'Consolas', sans-serif;
+    color: beige;
+}
+
+.mainTitle{
+    background: rgba(146, 146, 150, 0.192);
+    border-radius: 0px;
+}
+
+#topHomeContainer{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.801), rgba(32, 32, 32, 0.199)), url('https://source.unsplash.com/5fIoyoKlz7A');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    
+}
+
+#bottomHomeContainer{
+    background-image: linear-gradient(rgba(90, 88, 88, 0.096), rgba(19, 19, 19, 0.849)), url('https://source.unsplash.com/5J1bHRX1fNw');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    
+}
+
+#uploadForm{
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.466);
+    border-radius: 16px;
+    box-shadow: 0px 4px 30px rgba(184, 184, 184, 0.9);
+    height: 600px;
+}
+
+#cartDetailsBox{
+    background: rgba(0, 0, 0, 0.466);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(184, 184, 184, 0.9);
+}
+
+#productsCardContainer{
+    background: rgba(0, 0, 0, 0.466);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(184, 184, 184, 0.9);
+}
+
+.form-label{
+    font-size: 18px;
+}
+
+table 
+{
+    table-layout:fixed;
+    width:100%;
+}
+
+.tableGlassA{
+    background: rgba(255, 255, 255, 0.192);
+    border-radius: 0px;
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9); */
+}
+
+.tableGlassB{
+    background: rgba(2, 2, 2, 0.349);
+    border-radius: 16px;
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9); */
+}
+
+.card{
+    box-shadow: 5px 5px 20px 1px rgba(252, 252, 252, 0.904);
+    
+}
+
+.card-img{
+    border-radius: 16px;
+}
+
+
+h4, h5{
+    margin: 0;
+    text-align: center;
+}
+
+td{
+    word-wrap: break-word;
+}
+
+.modal{
+    background: rgba(31, 30, 30, 0.815);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.modalGlass{
+    background: rgba(0, 0, 0, 0.24);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(184, 184, 184, 0.9);
+}
