@@ -1,5 +1,7 @@
 import React from 'react'
 import CartDetailsRow from './CartDetailsRow'
+import CartDetailsSubtotal from './CartDetailsSubtotal'
+import CartDetailsTax from './CartDetailsTax'
 import CartDetailsTotal from './CartDetailsTotal'
 import CartBtn from './CartBtn'
 import CartBtnIcon from './CartBtnIcon'
@@ -31,22 +33,35 @@ const CartDetails = (props) => {
             }
         })}
         <tr className='text-center align-middle border-top border-bottom' style={{height: 60}}>
-          <td className='text-center'>
-              <CartBtn
-                  btnType={'button'} 
-                  btnClass={'btn btn-danger'} 
-                  btnIcon={<CartBtnIcon iconTagClassName={'bi bi-trash'}/>} 
-                  mainText={'Empty'} 
-                  onClickFunc={handleEmptyCart}
-                  newBlankSpace={<CartNewBlankSpace/>}/>
-          </td>
-          <td colSpan={2}>
-              <h5 className='text-light text-end'>Total:</h5>
-          </td>
-          <td colSpan={2}>
+          <td colSpan={5}>
+              <CartDetailsSubtotal presentState={props.actualState}/>
+              <CartDetailsTax presentState={props.actualState}/>
               <CartDetailsTotal presentState={props.actualState}/>
           </td>
           
+              
+         
+        </tr>
+        <tr className='text-end'>
+          <td colSpan={5}>
+              <CartBtn
+                      btnType={'button'} 
+                      btnClass={'btn btn-outline-danger me-2 mt-2'} 
+                      btnIcon={<CartBtnIcon iconTagClassName={'bi bi-trash'}/>} 
+                      mainText={'Empty'} 
+                      onClickFunc={handleEmptyCart}
+                      newBlankSpace={<CartNewBlankSpace/>}/>
+              <CartBtn 
+                btnType={'button'} 
+                btnValue={''}
+                btnClass={'btn btn-outline-secondary mt-2'} 
+                btnIcon={<CartBtnIcon iconTagClassName={'bi bi-filetype-pdf'}/>}
+                newBlankSpace={<CartNewBlankSpace/>}  
+                mainText={'Export PDF'} 
+                dataBsToggle={'modal'}
+                dataBsTarget={'#pdfModal'}
+                />
+          </td>
         </tr>
         
     </tbody>

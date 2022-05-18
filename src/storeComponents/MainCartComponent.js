@@ -7,12 +7,18 @@ import CartDetailsLogo from './CartDetailsLogo';
 import CartProductsLogo from './CartProductsLogo';
 import CartModal from './CartModal';
 import CartTitle from './CartTitle';
+import PDFGenerator from './PDFGenerator';
+
+
+
 
 
 //Initial State of useReducer() hook:
 const initialValue = {
     products: JSON.parse(localStorage.getItem('myProducts')) || [],
     cart: JSON.parse(localStorage.getItem('myCart')) || [],
+    subTotalDue: 0,
+    taxDueToPay: 0,
     totalToPay: 0,
     modalObject: {
         productId: '',
@@ -82,14 +88,18 @@ const reducer = (state, action) => {
          
         case 'calculate-total':
             let initV = 0;
+            let taxTotal = 0;
+            let finalTotalDue = 0;
             let currentCartItems = [...state.cart]
                 
-            let finalPreTotal = currentCartItems.reduce((accumV, currentV)=> {
+            let preTotal = currentCartItems.reduce((accumV, currentV)=> {
                     return parseFloat(accumV) + parseFloat(currentV.price)
                 }, initV)
+
+            taxTotal = (preTotal*0.15);
+            finalTotalDue = parseFloat(preTotal + taxTotal);
             
-            let finalTotal = finalPreTotal.toFixed(2);
-            return {...state, totalToPay: finalTotal}
+            return {...state, subTotalDue: preTotal.toFixed(2) , taxDueToPay: taxTotal.toFixed(2), totalToPay: finalTotalDue.toFixed(2)}
 
         case 'empty-the-cart':
             
@@ -159,7 +169,6 @@ const reducer = (state, action) => {
 }
 
 
-
 function MainCartComponent() {
 
     //userReducer hook:
@@ -193,49 +202,45 @@ function MainCartComponent() {
         })
     };
 
-
     //JSX:
     return (
         <div className='container-fluid p-0'>
 
-            <CartModal 
-                dispatchMethod={dispatch} 
-                actualState={mainState}
-                />
+            <PDFGenerator mainState={mainState} />
+
+            <CartModal dispatchMethod={dispatch} actualState={mainState}/>
+
             <div className="container-fluid" id='topHomeContainer'>
 
                 <div className="container">
                     <CartTitle />
                 </div>
                 
-                <div className='container p-0 pt-5'>
+                <div className='container p-0 pt-0'>
                     <div className="row justify-content-around">
                         <div className="col-sm-4 p-3 p-lg-4 mt-3 mb-5">
                             <CartFormLogo />
                             <CartForm dispatchMethod={dispatch}/>
                         </div>
-                        <div className="col-sm-7 p-2 p-lg-4 mt-3 mb-5">
+                        <div className="col-sm-7 p-2 p-lg-4 mt-3 mb-5" >
                             <CartDetailsLogo actualState={mainState}/>
-
-                        
-                                <table className="table table-borderless">
-                                    <thead className='border-bottom border-top'>
-                                        <tr className='text-center align-middle' style={{height: 60}}>
-                                            <th scope="col" style={{width: "25%"}}><h5>Item</h5></th>
-                                            <th scope='col' style={{width: "12%"}}>&nbsp;</th>
-                                            <th scope="col" style={{width: "17%"}}><h5>Qty</h5></th>
-                                            <th scope="col" style={{width: "23%"}}><h5>Price</h5></th>
-                                            <th scope="col" style={{width: "23%"}}><h5>SubT</h5></th>
-                                        </tr>
-                                    </thead>
-                                    <CartDetails 
-                                    actualState={mainState} 
-                                    addItemToCart={handleAddToCart} 
-                                    removeItemFromCart={handleRemoveFromCart} 
-                                    dispatchMethod={dispatch}/>
-                                </table>
-                            
-
+                            <table className="table table-borderless">
+                                <thead className='border-bottom border-top'>
+                                    <tr className='text-center align-middle' style={{height: 60}} id='tableHead'>
+                                        <th scope="col" style={{width: "25%"}}><h5>Item</h5></th>
+                                        <th scope='col' style={{width: "12%"}}>&nbsp;</th>
+                                        <th scope="col" style={{width: "17%"}}><h5>Qty</h5></th>
+                                        <th scope="col" style={{width: "23%"}}><h5>Price</h5></th>
+                                        <th scope="col" style={{width: "23%"}}><h5>SubT</h5></th>
+                                    </tr>
+                                </thead>
+                                <CartDetails 
+                                actualState={mainState} 
+                                addItemToCart={handleAddToCart} 
+                                removeItemFromCart={handleRemoveFromCart} 
+                                dispatchMethod={dispatch}
+                                />
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -257,7 +262,7 @@ function MainCartComponent() {
                     }
                 </div>
             </div>
-            
+         
         </div> 
     )
 }

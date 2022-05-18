@@ -37,13 +37,13 @@ const CartDetailsRow = (props) => {
                             <CartBtn 
                                 btnType={'button'} 
                                 btnValue={props.currentItem.id} 
-                                btnClass={'btn btn-primary btn-sm'} 
+                                btnClass={'btn btn-outline-primary btn-sm'} 
                                 mainText={'+'} 
                                 onClickFunc={addItemToCart2Handler}/>
                             <CartBtn 
                                 btnType={'button'} 
                                 btnValue={props.currentItem.id} 
-                                btnClass={'btn btn-secondary btn-sm'} 
+                                btnClass={'btn btn-outline-secondary btn-sm'} 
                                 mainText={'-'} 
                                 onClickFunc={removeItemFromCart2Handler}/>
                         </div>
