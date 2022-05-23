@@ -1,14 +1,19 @@
 *{
-    font-family: 'Consolas', sans-serif;
+    font-family: 'Consolas','Calibri Light', sans-serif;
     color: beige;
 }
 
-.navbar-brand {
-    font-size: 28px;
+.navbar {
+    z-index: 1;
 }
 
+.navbar-brand {
+    font-size: 22px;
+}
+
+
 .nav-link {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 10px;
 }
 
@@ -73,10 +78,11 @@ td{
     box-shadow: 0 4px 30px rgba(184, 184, 184, 0.9);
 }
 
-.cartDiv {
+/* .cartDiv {
     position: -webkit-sticky;
     position: sticky;
-    top: 100px;
-}
+    top: 3px;
+    z-index: 10;
+} */
 
 

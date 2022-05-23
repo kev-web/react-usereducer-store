@@ -10,7 +10,7 @@ const MainCart = (props) => {
         
         </div>
         <div className="col-sm-8">
-          <div className="container p-3 cartDiv">
+          <div className="container p-3 w-25 mb-3">
             <CartDetailsLogo actualState={props.actualState}/>
           </div>
           <table className="table table-borderless">
