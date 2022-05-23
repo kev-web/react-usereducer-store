@@ -32,7 +32,7 @@ const CartProductCard = (props) => {
 
 
   return (
-    <div className="card m-2 border-0" style={{width:'20rem', display: "inline-block"}} key={props.loopItem.id}>
+    <div className="card m-2 border-0" style={{width:'19.6rem', display: "inline-block"}} key={props.loopItem.id}>
         <img src={props.loopItem.pic} width={"100%"} className='img-fluid card-img' alt='product-card-img'/>
         <div className="card-body overflow-auto">
             <div className="row card-title mb-3">
@@ -46,8 +46,23 @@ const CartProductCard = (props) => {
                 </div>
             </div>
             {/* <p className="text-muted">{props.loopItem.id}</p> */}
-            <p className="card-text text-start">{props.loopItem.description}</p>
-            <p className='fw-bold lead text-end'>${props.loopItem.price}</p>
+            <p className="card-text text-start mb-4">{props.loopItem.description}</p>
+            <div className='row'>
+                <div className="col-6 text-start">
+                    <h3 className='ms-3'>
+                        <i className="bi bi-cart3 position-relative">
+                            <span className="position-absolute top-0 start-90 translate-middle badge rounded-pill p-1 bg-success">
+                                <p style={{fontSize:14, padding: 0, margin: 0, color: 'white'}}>
+                                    {props.currentState.cart.filter(element=>element.id === props.loopItem.id).length}
+                                </p>
+                            </span>
+                        </i>
+                    </h3>
+                </div>
+                <div className="col-6">
+                    <p className='fw-bold lead text-end me-3'>${props.loopItem.price}</p>
+                </div>
+            </div>
       
             <CartBtn 
                 btnType={'button'} 
