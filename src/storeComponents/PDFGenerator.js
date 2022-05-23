@@ -229,7 +229,7 @@ const PDFGenerator = (props) => {
 
         doc.autoTable(content)
         doc.autoTable(contentTotal)
-        doc.save("my-report.pdf")
+        doc.save(`report-${pdfId}`)
       }
 
 
