@@ -56,6 +56,10 @@ table
     border-radius: 16px;
 }
 
+.card-quantity, .card-bool {
+    font-size: 14px;
+}
+
 
 h4, h5{
     margin: 0;
