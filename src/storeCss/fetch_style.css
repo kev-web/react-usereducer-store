@@ -3,9 +3,13 @@
     color: beige;
 }
 
-.mainTitle{
-    background: rgba(146, 146, 150, 0.192);
-    border-radius: 0px;
+.navbar-brand {
+    font-size: 28px;
+}
+
+.nav-link {
+    font-size: 24px;
+    margin-right: 10px;
 }
 
 #topHomeContainer{
@@ -39,7 +43,8 @@ table
 .card{
     /* box-shadow: 5px 5px 20px 1px rgba(252, 252, 252, 0.904); */
     border-radius: 16px;
-    background: rgba(14, 13, 13, 0.747);
+    background: rgba(27, 27, 27, 0.932);
+    box-shadow: 0 4px 30px rgba(184, 184, 184, 0.5);
 }
 
 .card-img{
@@ -67,3 +72,11 @@ td{
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(184, 184, 184, 0.9);
 }
+
+.cartDiv {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+}
+
+

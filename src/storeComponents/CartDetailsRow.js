@@ -15,7 +15,7 @@ const CartDetailsRow = (props) => {
  
   return (
 
-        <tr key={props.currentItem.id} className='text-center align-middle border-bottom'>
+        <tr key={props.currentItem.id} className='text-center align-middle'>
             <td className='text-start'>{props.currentItem.name}</td>
             <td 
                 style={{
@@ -37,7 +37,7 @@ const CartDetailsRow = (props) => {
                             <CartBtn 
                                 btnType={'button'} 
                                 btnValue={props.currentItem.id} 
-                                btnClass={'btn btn-outline-primary btn-sm'} 
+                                btnClass={'btn btn-success btn-sm'} 
                                 mainText={'+'} 
                                 onClickFunc={addItemToCart2Handler}/>
                             <CartBtn 

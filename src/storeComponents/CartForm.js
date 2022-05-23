@@ -29,7 +29,7 @@ const CartForm = (props) => {
 
   return (
 
-    <form onSubmit={handleSubmitForm}>
+    <form onSubmit={handleSubmitForm} className='mt-5 mb-3'>
         <label htmlFor="productName" className='form-label'>Product Name:</label>
         <input name='product' type="text" className='form-control mb-3' id='productName' required/>
 
