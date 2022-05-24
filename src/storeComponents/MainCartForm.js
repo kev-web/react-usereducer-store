@@ -10,8 +10,8 @@ const MainCartForm = (props) => {
             <div className="col-sm-1">
 
             </div>
-            <div className="col-sm-6 modalGlass p-3 pt-5 p-sm-5">
-                <CartFormLogo />
+            <div className="col-sm-6 p-3 pt-5 p-sm-5">
+                <CartFormLogo textColor={'text-dark'}/>
                 <CartForm dispatchMethod={props.dispatchMethod}/>
             </div>
             <div className="col-sm-1">

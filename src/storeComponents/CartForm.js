@@ -45,13 +45,16 @@ const CartForm = (props) => {
           <label htmlFor="productName" className='form-label text-secondary'>Price:</label>
         </div>
 
-        <CartBtn 
-          btnType={'submit'} 
-          btnClass={'btn btn-success mt-3'} 
-          btnIcon={<CartBtnIcon 
-          iconTagClassName={'bi bi-cloud-arrow-up'}/>}  
-          mainText={'Upoad'}
-          newBlankSpace={<CartNewBlankSpace />}/>
+        <div className='text-end'>
+          <CartBtn 
+            btnType={'submit'} 
+            btnClass={'btn btn-success mt-3'} 
+            btnIcon={<CartBtnIcon 
+                        iconTagClassName={'bi bi-cloud-arrow-up text-light'}/>}  
+            mainText={'Upoad'}
+            newBlankSpace={<CartNewBlankSpace />}/>
+        </div>
+        
           
     </form>
 

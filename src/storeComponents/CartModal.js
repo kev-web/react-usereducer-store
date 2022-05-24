@@ -42,7 +42,7 @@ const CartModal = (props) => {
         <div className="modal-dialog">
             <div className="modal-content modalGlass">
                 <div className="modal-header p-2">
-                    <h4 className='modal-title mx-auto'>{props.actualState.modalObject.productName}</h4>
+                    <h4 className='modal-title mx-auto cardTextColor'>{props.actualState.modalObject.productName}</h4>
                     <img src={props.actualState.modalObject.productPic} width={"25%"} alt='product-image'/>
                     <button type='button' className="btn-close bg-light me-2" data-bs-dismiss='modal'></button>
                 </div>
@@ -50,13 +50,13 @@ const CartModal = (props) => {
 
                 <form onSubmit={handleModalSubmitForm}>
                     <div className="modal-body">
-                        <label htmlFor="editProductName" className="form-label mt-2">Product Name:</label>
+                        <label htmlFor="editProductName" className="form-label mt-2 cardTextColor">Product Name:</label>
                         <input name='editName' type="text" className="form-control" id='editProductName' value={inputName} onChange={(e)=>setInputName(e.target.value)}/>
                         
-                        <label htmlFor="editProductDescription" className="form-label mt-2">Description:</label>
+                        <label htmlFor="editProductDescription" className="form-label mt-2 cardTextColor">Description:</label>
                         <textarea name="editDescription" className='form-control' id="editProductDescription" value={inputDescription} onChange={(e)=>setInputDescription(e.target.value)}  cols="30" rows="5"></textarea>
                         
-                        <label htmlFor="editProductPrice" className="form-label mt-2">Price:</label>
+                        <label htmlFor="editProductPrice" className="form-label mt-2 cardTextColor">Price:</label>
                         <input name='editPrice' type='number' className="form-control" id='editProductPrice' value={inputPrice} onChange={(e)=>setInputPrice(e.target.value)} step="0.01" min="0"/>
                     </div>
                     <div className="modal-footer">

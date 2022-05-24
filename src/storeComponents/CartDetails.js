@@ -32,18 +32,21 @@ const CartDetails = (props) => {
                          dispatchMethod={props.dispatchMethod}/>
             }
         })}
+
         <tr className='text-center align-middle border-top border-bottom' style={{height: 60}}>
-          <td colSpan={5}>
+          <td></td>
+          <td className='d-none d-md-block'></td>
+          <td colSpan={3}>
               <CartDetailsSubtotal presentState={props.actualState}/>
               <CartDetailsTax presentState={props.actualState}/>
               <CartDetailsTotal presentState={props.actualState}/>
           </td>
-          
-              
-         
         </tr>
+
         <tr className='text-end'>
-          <td colSpan={5}>
+          <td></td>
+          <td className='d-none d-md-block'></td>
+          <td colSpan={3}>
               <CartBtn
                       btnType={'button'} 
                       btnClass={'btn btn-outline-danger me-2 mt-2'} 

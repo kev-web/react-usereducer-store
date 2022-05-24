@@ -17,15 +17,18 @@ const CartDetailsRow = (props) => {
 
         <tr key={props.currentItem.id} className='text-center align-middle'>
             <td className='text-start'>{props.currentItem.name}</td>
-            <td 
-                style={{
+            <td className='d-none d-md-block'>      
+                <div style={{
                         backgroundImage: `url(${props.currentItem.pic})`, 
                         backgroundPosition: 'center',
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
-                        width: '40px',
-                        height: '60px'
-                        }}>        
+                        width: '100%',
+                        height: '50px',
+                        }}
+                    >
+                    
+                </div>
             </td>
             <td className='p-0 m-0'>
                 <div className="row m-0 p-1">
@@ -37,15 +40,15 @@ const CartDetailsRow = (props) => {
                             <CartBtn 
                                 btnType={'button'} 
                                 btnValue={props.currentItem.id} 
-                                btnClass={'btn btn-success btn-sm'} 
-                                mainText={'+'} 
-                                onClickFunc={addItemToCart2Handler}/>
-                            <CartBtn 
-                                btnType={'button'} 
-                                btnValue={props.currentItem.id} 
                                 btnClass={'btn btn-outline-secondary btn-sm'} 
                                 mainText={'-'} 
                                 onClickFunc={removeItemFromCart2Handler}/>
+                            <CartBtn 
+                            btnType={'button'} 
+                            btnValue={props.currentItem.id} 
+                            btnClass={'btn btn-success btn-sm'} 
+                            mainText={'+'} 
+                            onClickFunc={addItemToCart2Handler}/>
                         </div>
                     </div>
                 </div>

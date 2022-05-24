@@ -1,8 +1,8 @@
 import React from 'react'
 
-const CartProductsLogo = () => {
+const CartProductsLogo = (props) => {
   return (
-    <h1 className='display-4 text-center m-0 p-0'><i className="bi bi-bounding-box"></i></h1>
+    <h1 className='display-4 text-center m-0 p-0'><i className={`bi bi-bounding-box ${props.textColor}`}></i></h1>
   )
 }
 

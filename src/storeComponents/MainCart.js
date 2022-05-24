@@ -4,24 +4,28 @@ import CartDetails from './CartDetails'
 
 const MainCart = (props) => {
   return (
-    <div className="m-1 m-sm-0">
-      <div className='container pt-5 pb-5 p-sm-5 mt-5 mb-5 modalGlass'>
+
+    
+
+
+    <div className="m-0 p-0">
+      <div className='container p-0 pt-5 pb-5 p-sm-5 mt-5 mb-5'>
         <div className="row">
-          <div className="col-sm-2">
+          <div className="col-0 col-sm-2">
           
           </div>
           <div className="col-sm-8">
             <div className="container p-3 w-25 mb-3">
-              <CartDetailsLogo actualState={props.actualState}/>
+              <CartDetailsLogo badgeTextColor={'text-light'} actualState={props.actualState}/>
             </div>
             <table className="table table-borderless">
-                <thead className='border-bottom border-top'>
+                <thead className='border-top'>
                     <tr className='text-center align-middle' style={{height: 60}} id='tableHead'>
-                        <th scope="col" style={{width: "25%"}}><h5>Item</h5></th>
-                        <th scope='col' style={{width: "12%"}}>&nbsp;</th>
-                        <th scope="col" style={{width: "17%"}}><h5>Qty</h5></th>
-                        <th scope="col" style={{width: "23%"}}><h5>Price</h5></th>
-                        <th scope="col" style={{width: "23%"}}><h5>SubT</h5></th>
+                        <th scope="col" style={{width: "25%"}}><h5>ITEM</h5></th>
+                        <th scope='col' style={{width: "12%"}} className='d-none d-md-block'>&nbsp;</th>
+                        <th scope="col" style={{width: "20%"}}><h5>QTY</h5></th>
+                        <th scope="col" style={{width: "21%"}}><h5>PRICE</h5></th>
+                        <th scope="col" style={{width: "22%"}}><h5>SUBT</h5></th>
                     </tr>
                 </thead>
                 <CartDetails 
@@ -31,7 +35,7 @@ const MainCart = (props) => {
                 dispatchMethod={props.dispatchMethod}/>
             </table>
           </div>
-          <div className="col-sm-2">
+          <div className="col-0 col-sm-2">
 
           </div>
         </div>

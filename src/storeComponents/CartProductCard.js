@@ -37,20 +37,20 @@ const CartProductCard = (props) => {
         <div className="card-body overflow-auto">
             <div className="row card-title mb-3">
                 <div className="col-10">
-                    <h5 className="fw-bold fst-italic text-start">{props.loopItem.name}</h5>
+                    <h5 className="fw-bold fst-italic text-start beigeTextColor">{props.loopItem.name}</h5>
                 </div>
                 <div className="col-2">
                     <a className='btn border-0 p-0' data-bs-toggle="collapse" href={`#cardCollapseBox${props.loopItem.id}`} role="button">
-                        <i class="bi bi-gear"></i>
+                        <i class="bi bi-gear beigeTextColor"></i>
                     </a>
                 </div>
             </div>
             {/* <p className="text-muted">{props.loopItem.id}</p> */}
-            <p className="card-text text-start mb-4">{props.loopItem.description}</p>
+            <p className="card-text text-start mb-4 beigeTextColor ms-2 me-2">{props.loopItem.description}</p>
             <div className='row'>
                 <div className="col-6 text-start">
                     <h3 className='ms-3'>
-                        <i className="bi bi-cart3 position-relative">
+                        <i className="bi bi-cart3 position-relative beigeTextColor">
                             <span className="position-absolute top-0 start-90 translate-middle badge rounded-pill p-1 bg-success">
                                 <p style={{fontSize:14, padding: 0, margin: 0, color: 'white'}}>
                                     {props.currentState.cart.filter(element=>element.id === props.loopItem.id).length}
@@ -60,15 +60,15 @@ const CartProductCard = (props) => {
                     </h3>
                 </div>
                 <div className="col-6">
-                    <p className='fw-bold lead text-end me-3'>${props.loopItem.price}</p>
+                    <p className='fw-bold lead text-end me-3 beigeTextColor'>${props.loopItem.price}</p>
                 </div>
             </div>
       
             <CartBtn 
                 btnType={'button'} 
                 btnValue={props.loopItem.id} 
-                btnClass={'btn btn-outline-warning me-2 mb-2'} 
-                btnIcon={<CartBtnIcon iconTagClassName={'bi bi-dash-circle text-secondary'}/>} 
+                btnClass={'btn btn-warning me-2 mb-2'} 
+                btnIcon={<CartBtnIcon iconTagClassName={'bi bi-dash-circle text-dark'}/>} 
                 mainText={'from Cart'} 
                 onClickFunc={removeCartHandler}
                 newBlankSpace={<CartNewBlankSpace />}/>
@@ -77,7 +77,7 @@ const CartProductCard = (props) => {
                 btnType={'button'} 
                 btnValue={props.loopItem.id} 
                 btnClass={'btn btn-primary mb-2'} 
-                btnIcon={<CartBtnIcon iconTagClassName={'bi bi-plus-circle'}/>} 
+                btnIcon={<CartBtnIcon iconTagClassName={'bi bi-plus-circle text-light'}/>} 
                 mainText={'to Cart'} 
                 onClickFunc={addCartHandler}
                 newBlankSpace={<CartNewBlankSpace />}/>
@@ -85,12 +85,12 @@ const CartProductCard = (props) => {
         
 
             <div className="collapse p-0" id={`cardCollapseBox${props.loopItem.id}`}>
-                <p className='text-end card-quantity mb-0 mt-1'>Quantity in Cart:&nbsp;    
+                <p className='text-end card-quantity mb-0 mt-1 me-3 text-light'>Quantity in Cart:&nbsp;    
                     {props.currentState.cart.filter(element=>element.id === props.loopItem.id).length}
                 </p>
-                <p className='text-end card-bool mt-0 mb-0'>In Cart:&nbsp;{String(props.loopItem.addedToCart)}</p>
+                <p className='text-end card-bool mt-0 mb-0 me-3 text-light'>In Cart:&nbsp;{String(props.loopItem.addedToCart)}</p>
 
-                <div className='text-center p-0 mt-2'>
+                <div className='text-end me-3 p-0 mt-2'>
                     <CartBtn 
                         btnType={'button'} 
                         btnValue={props.loopItem.id} 

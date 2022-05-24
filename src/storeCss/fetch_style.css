@@ -1,6 +1,6 @@
 *{
     font-family: 'Consolas','Calibri Light', sans-serif;
-    color: beige;
+    color: rgb(27, 27, 27);
 }
 
 .navbar {
@@ -56,6 +56,14 @@ table
     border-radius: 16px;
 }
 
+.beigeTextColor{
+    color: rgb(221, 221, 198);
+}
+
+/* .cardTextColor{
+    color: rgb(221, 221, 198);
+} */
+
 .card-quantity, .card-bool {
     font-size: 14px;
 }
@@ -83,11 +91,11 @@ td{
 }
 
 .menuBoxBtn {
-    background-color: rgb(0, 118, 165);
+    background-color: #31a4f7;
 }
 
 .menuBoxBtn:hover {
-    background-color: rgb(0, 150, 209);
+    background-color: #0671be;
 }
 
 /* .cartDiv {
