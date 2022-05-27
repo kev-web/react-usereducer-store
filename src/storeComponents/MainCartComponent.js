@@ -213,24 +213,7 @@ function MainCartComponent() {
             <PDFGenerator mainState={mainState} />
             <CartModal dispatchMethod={dispatch} actualState={mainState}/>
 
-            <div className='fixedBox'>
-                <div className="row align-items-center">
-                    <div className='col-6 col-sm-11 text-end'>
-                        <h6 className='beigeTextColor fst-italic'>App Products:&nbsp;{mainState.products.length}</h6>
-                    </div>
-                    <div className='col-6 col-sm-1 text-end'>
-                        <CartDetailsLogo 
-                            displaySize={'display-5'} 
-                            badgeTextColor={'text-light'} 
-                            textColor={'beigeTextColor'}
-                            circlePadding={'p-1'} 
-                            alignText={'text-end'}
-                            fontSize={16} 
-                            pillColorBg={'bg-danger'} 
-                            actualState={mainState}/>
-                    </div>
-                </div>
-            </div>
+            
 
             <Routes>
                 <Route path='/' element={<MainCartHome actualState={mainState}/>}/>
@@ -253,6 +236,26 @@ function MainCartComponent() {
                                 dispatchMethod={dispatch}/>}
                 />
             </Routes>
+
+
+            <div className='fixedBox border-top border-warning border-3'>
+                <div className="row align-items-center">
+                    <div className='col-6 col-sm-11 text-end'>
+                        <h6 className='beigeTextColor fst-italic'>App Products:&nbsp;<span className='text-light fs-4 fw-bold'>{mainState.products.length}</span></h6>
+                    </div>
+                    <div className='col-6 col-sm-1 text-end'>
+                        <CartDetailsLogo 
+                            displaySize={'display-6'} 
+                            badgeTextColor={'text-light'} 
+                            textColor={'beigeTextColor'}
+                            circlePadding={'p-1'} 
+                            alignText={'text-center'}
+                            fontSize={14} 
+                            pillColorBg={'bg-danger'} 
+                            actualState={mainState}/>
+                    </div>
+                </div>
+            </div>
       
 
             {/* <div className='container-fluid p-0'>

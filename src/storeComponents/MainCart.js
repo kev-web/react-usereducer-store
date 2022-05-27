@@ -13,7 +13,14 @@ const MainCart = (props) => {
           </div>
           <div className="col-sm-8">
             <div className="container p-3 w-25 mb-3">
-              <CartDetailsLogo displaySize={'display-3'} badgeTextColor={'text-light'} circlePadding={'p-2'} fontSize={20} pillColorBg={'bg-danger'} actualState={props.actualState}/>
+              <CartDetailsLogo 
+                displaySize={'display-3'} 
+                alignText={'text-center'}
+                badgeTextColor={'text-light'} 
+                circlePadding={'p-2'} 
+                fontSize={20} 
+                pillColorBg={'bg-danger'} 
+                actualState={props.actualState}/>
             </div>
             <table className="table table-borderless">
                 <thead className='border-top'>

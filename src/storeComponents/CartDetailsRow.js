@@ -1,6 +1,7 @@
 import React from 'react'
 import CartBtn from './CartBtn'
 import CartInputBoxQuantity from './CartInputBoxQuantity'
+import CartBtnIcon from './CartBtnIcon'
 
 const CartDetailsRow = (props) => {
 
@@ -40,14 +41,16 @@ const CartDetailsRow = (props) => {
                             <CartBtn 
                                 btnType={'button'} 
                                 btnValue={props.currentItem.id} 
-                                btnClass={'btn btn-outline-secondary btn-sm'} 
-                                mainText={'-'} 
+                                btnClass={'btn btn-secondary btn-sm'} 
+                                // mainText={'-'} 
+                                btnIcon={<CartBtnIcon iconTagClassName={'bi bi-dash-circle text-light fs-6'} />}
                                 onClickFunc={removeItemFromCart2Handler}/>
                             <CartBtn 
                             btnType={'button'} 
                             btnValue={props.currentItem.id} 
                             btnClass={'btn btn-primary btn-sm'} 
-                            mainText={'+'} 
+                            // mainText={'+'} 
+                            btnIcon={<CartBtnIcon iconTagClassName={'bi bi-plus-circle text-light fs-6'}/>} 
                             onClickFunc={addItemToCart2Handler}/>
                         </div>
                     </div>

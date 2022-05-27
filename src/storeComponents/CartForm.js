@@ -36,13 +36,13 @@ const CartForm = (props) => {
         </div>
         
         <div className="form-floating">
-          <textarea name="description" id="" cols="30" rows="4" className='form-control mb-3' placeholder='...' autoComplete='off' required></textarea>
-          <label htmlFor="productName" className='form-label text-secondary'>Description:</label>
+          <textarea name="description" id="productDescription" style={{height: '125px'}} maxLength="150" className='form-control mb-3' placeholder='Enter Description...' autoComplete='off' required></textarea>
+          <label htmlFor="productDescription" className='form-label text-secondary'>Description:</label>
         </div>
 
         <div className="form-floating">
-          <input name='price' type="number" step="0.01" min="0" className='form-control mb-3' id='productName' placeholder='...' autoComplete='off' required/>
-          <label htmlFor="productName" className='form-label text-secondary'>Price:</label>
+          <input name='price' type="number" step="0.01" min="0" className='form-control mb-3' id='productPrice' placeholder='Enter Price...' autoComplete='off' required/>
+          <label htmlFor="productPrice" className='form-label text-secondary'>Price:</label>
         </div>
 
         <div className='text-end'>
