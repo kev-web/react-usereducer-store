@@ -6,6 +6,7 @@ import MainCartProducts from './MainCartProducts';
 import MainCart from './MainCart';
 import CartModal from './CartModal';
 import PDFGenerator from './PDFGenerator';
+import CartDetailsLogo from './CartDetailsLogo';
 // import CartFormLogo from './CartFormLogo';
 // import CartForm from './CartForm';
 // import CartProductCard from './CartProductCard';
@@ -211,6 +212,25 @@ function MainCartComponent() {
 
             <PDFGenerator mainState={mainState} />
             <CartModal dispatchMethod={dispatch} actualState={mainState}/>
+
+            <div className='fixedBox'>
+                <div className="row align-items-center">
+                    <div className='col-6 col-sm-11 text-end'>
+                        <h6 className='beigeTextColor fst-italic'>App Products:&nbsp;{mainState.products.length}</h6>
+                    </div>
+                    <div className='col-6 col-sm-1 text-end'>
+                        <CartDetailsLogo 
+                            displaySize={'display-5'} 
+                            badgeTextColor={'text-light'} 
+                            textColor={'beigeTextColor'}
+                            circlePadding={'p-1'} 
+                            alignText={'text-end'}
+                            fontSize={16} 
+                            pillColorBg={'bg-danger'} 
+                            actualState={mainState}/>
+                    </div>
+                </div>
+            </div>
 
             <Routes>
                 <Route path='/' element={<MainCartHome actualState={mainState}/>}/>

@@ -46,7 +46,7 @@ const CartDetailsRow = (props) => {
                             <CartBtn 
                             btnType={'button'} 
                             btnValue={props.currentItem.id} 
-                            btnClass={'btn btn-success btn-sm'} 
+                            btnClass={'btn btn-primary btn-sm'} 
                             mainText={'+'} 
                             onClickFunc={addItemToCart2Handler}/>
                         </div>

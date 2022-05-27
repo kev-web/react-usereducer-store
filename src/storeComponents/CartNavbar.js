@@ -6,9 +6,9 @@ import { NavLink } from 'react-router-dom'
 
 const CartNavbar = () => {
     return (
-        <nav className="navbar sticky-top navbar-expand-lg bg-dark navbar-dark border-bottom border-secondary">
+        <nav className="navbar sticky-top navbar-expand-lg navbar-dark p-3">
             <div className="container">
-                <NavLink className="navbar-brand nav-link" aria-current="/" to='/'><i className="bi bi-house-door text-warning"></i>&nbsp;App</NavLink>
+                <NavLink className="navbar-brand nav-link text-light" aria-current="/" to='/'><i className="bi bi-house-door text-warning"></i>&nbsp;App</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="bi bi-three-dots text-warning"></span>
                 </button>

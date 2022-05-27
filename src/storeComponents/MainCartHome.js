@@ -10,13 +10,25 @@ const MainCartHome = (props) => {
         <div className='container pt-5 pb-5 p-sm-5 mt-5 mb-5'>
             <div className="row p-sm-5">
                 <div className="col-sm-4 text-center p-3 p-sm-5">
-                    <NavLink className="btn menuBoxBtn btn-lg p-5 border" to='/form-page'><CartFormLogo textColor={'text-light'}/></NavLink>
+                    <NavLink className="btn menuBoxBtn btn-lg p-5" to='/form-page'><CartFormLogo textColor={'text-secondary'}/></NavLink>
                 </div>
                 <div className="col-sm-4 text-center p-3 p-sm-5">
-                    <NavLink className='btn menuBoxBtn btn-lg p-5 border' to='/products-page'><CartProductsLogo textColor={'text-light'}/></NavLink>
+                    <NavLink className='btn menuBoxBtn btn-lg p-5' to='/products-page'><CartProductsLogo textColor={'text-secondary'}/></NavLink>
                 </div>
                 <div className="col-sm-4 text-center p-3 p-sm-5">
-                    <NavLink className='btn menuBoxBtn btn-lg p-5 border' to='/cart-page'><CartDetailsLogo badgeTextColor={'text-light'} textColor={'text-light'} actualState={props.actualState}/></NavLink>
+                    <NavLink className='btn menuBoxBtn btn-lg p-5' to='/cart-page'>
+
+                        <CartDetailsLogo 
+                            displaySize={'display-3'} 
+                            textColor={'text-secondary'} 
+                            badgeTextColor={'text-light'} 
+                            alignText={'text-center'} 
+                            circlePadding={'p-2'} 
+                            fontSize={20} 
+                            pillColorBg={'bg-danger'} 
+                            actualState={props.actualState}/>
+
+                    </NavLink>
                 </div>
             </div>
         </div>

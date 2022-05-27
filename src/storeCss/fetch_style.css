@@ -3,8 +3,22 @@
     color: rgb(27, 27, 27);
 }
 
+.fixedBox {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(6, 128, 150, 0.877);
+    padding: 16px;
+    padding-right: 25px;
+    padding-bottom: 5px;
+    z-index: 5;
+    text-align: right;
+}
+
+
 .navbar {
     z-index: 1;
+    background-color: rgba(6, 128, 150, 0.877);
 }
 
 .navbar-brand {
@@ -91,11 +105,12 @@ td{
 }
 
 .menuBoxBtn {
-    background-color: #15a9d6;
+    background-color: #ffc107;
+    border-radius: 50%;
 }
 
 .menuBoxBtn:hover {
-    background-color: #0abbf1;
+    background-color: #e4ab00;
 }
 
 /* .cartDiv {
