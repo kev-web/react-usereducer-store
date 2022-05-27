@@ -238,7 +238,7 @@ function MainCartComponent() {
             </Routes>
 
 
-            <div className='fixedBox border-top border-warning border-3'>
+            {/* <div className='fixedBox border-top border-warning border-3'>
                 <div className="row align-items-center">
                     <div className='col-6 col-sm-11 text-end'>
                         <h6 className='beigeTextColor fst-italic'>App Products:&nbsp;<span className='text-light fs-4 fw-bold'>{mainState.products.length}</span></h6>
@@ -255,7 +255,7 @@ function MainCartComponent() {
                             actualState={mainState}/>
                     </div>
                 </div>
-            </div>
+            </div> */}
       
 
             {/* <div className='container-fluid p-0'>

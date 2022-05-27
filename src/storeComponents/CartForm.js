@@ -49,10 +49,9 @@ const CartForm = (props) => {
           <CartBtn 
             btnType={'submit'} 
             btnClass={'btn btn-warning mt-3'} 
-            btnIcon={<CartBtnIcon 
-                        iconTagClassName={'bi bi-cloud-arrow-up text-dark'}/>}  
-            mainText={'Upoad'}
-            newBlankSpace={<CartNewBlankSpace />}/>
+            mainText={'Submit'}
+            btnIconClass='bi bi-cloud-arrow-up fs-5'
+            />
         </div>
         
           

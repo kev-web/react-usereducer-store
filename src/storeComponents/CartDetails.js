@@ -50,18 +50,17 @@ const CartDetails = (props) => {
               <CartBtn
                       btnType={'button'} 
                       btnClass={'btn btn-outline-danger me-2 mt-2'} 
-                      btnIcon={<CartBtnIcon iconTagClassName={'bi bi-trash'}/>} 
                       mainText={'Empty'} 
+                      btnIconClass={'bi bi-trash fs-5'}
                       onClickFunc={handleEmptyCart}
-                      newBlankSpace={<CartNewBlankSpace/>}/>
+                      />
               <CartBtn 
                 btnType={'button'} 
                 btnValue={''}
                 btnClass={'btn btn-outline-secondary mt-2'} 
-                btnIcon={<CartBtnIcon iconTagClassName={'bi bi-filetype-pdf'}/>}
-                newBlankSpace={<CartNewBlankSpace/>}  
                 mainText={'Export PDF'} 
                 dataBsToggle={'modal'}
+                btnIconClass={'bi bi-file-earmark-pdf fs-5'}
                 dataBsTarget={'#pdfModal'}
                 />
           </td>

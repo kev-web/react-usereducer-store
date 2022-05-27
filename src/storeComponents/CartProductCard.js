@@ -68,21 +68,17 @@ const CartProductCard = (props) => {
                 btnType={'button'} 
                 btnValue={props.loopItem.id} 
                 btnClass={'btn btn-warning me-2 mb-2'} 
-                btnIcon={<CartBtnIcon iconTagClassName={'bi bi-dash-circle text-dark'}/>} 
-                mainText={'from Cart'} 
-                onClickFunc={removeCartHandler}
-                newBlankSpace={<CartNewBlankSpace />}/>
+                mainText={'Remove Cart'} 
+                onClickFunc={removeCartHandler}/>
 
             <CartBtn 
                 btnType={'button'} 
                 btnValue={props.loopItem.id} 
                 btnClass={'btn btn-primary mb-2'} 
-                btnIcon={<CartBtnIcon iconTagClassName={'bi bi-plus-circle text-light'}/>} 
-                mainText={'to Cart'} 
+                mainText={'Add Cart'} 
                 onClickFunc={addCartHandler}
-                newBlankSpace={<CartNewBlankSpace />}/>
-            
-        
+                />
+
 
             <div className="collapse p-0" id={`cardCollapseBox${props.loopItem.id}`}>
                 <p className='text-end card-quantity mb-0 mt-1 me-3 text-light'>Quantity in Cart:&nbsp;    

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CartBtn = ({btnType, btnValue, btnClass, btnIcon, mainText, onClickFunc, newBlankSpace, dataBsToggle, dataBsTarget}) => {
+const CartBtn = ({btnType, btnValue, btnClass, btnIconClass, mainText, onClickFunc, dataBsToggle, dataBsTarget}) => {
 
   return (
       <button 
@@ -10,7 +10,7 @@ const CartBtn = ({btnType, btnValue, btnClass, btnIcon, mainText, onClickFunc, n
           onClick={onClickFunc}
           data-bs-toggle={dataBsToggle}
           data-bs-target={dataBsTarget}>
-              {btnIcon}{newBlankSpace}{mainText}
+          <i class={btnIconClass}></i>&nbsp;{mainText}
       </button>
   )
 }

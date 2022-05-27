@@ -41,16 +41,14 @@ const CartDetailsRow = (props) => {
                             <CartBtn 
                                 btnType={'button'} 
                                 btnValue={props.currentItem.id} 
-                                btnClass={'btn btn-secondary btn-sm'} 
-                                // mainText={'-'} 
-                                btnIcon={<CartBtnIcon iconTagClassName={'bi bi-dash-circle text-light fs-6'} />}
+                                btnClass={'btn btn-secondary btn-sm fs-6 fw-bold'} 
+                                mainText={'↓'} 
                                 onClickFunc={removeItemFromCart2Handler}/>
                             <CartBtn 
                             btnType={'button'} 
                             btnValue={props.currentItem.id} 
-                            btnClass={'btn btn-primary btn-sm'} 
-                            // mainText={'+'} 
-                            btnIcon={<CartBtnIcon iconTagClassName={'bi bi-plus-circle text-light fs-6'}/>} 
+                            btnClass={'btn btn-primary btn-sm fs-6 fw-bold'} 
+                            mainText={'↑'} 
                             onClickFunc={addItemToCart2Handler}/>
                         </div>
                     </div>
