@@ -14,7 +14,7 @@ const CartForm = (props) => {
           name: e.target.product.value,
           description: e.target.description.value,
           price: e.target.price.value,
-          pic: `https://source.unsplash.com/random/300x300/?${keyWord.split(' ')[1]},${keyWord.split(' ')[0]}`,
+          pic: `https://source.unsplash.com/random/1000x1000/?${keyWord.split(' ')[1]},${keyWord.split(' ')[0]}`,
           addedToCart: false,
       }
       props.dispatchMethod({

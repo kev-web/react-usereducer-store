@@ -1,7 +1,6 @@
 import React from 'react'
 import CartBtn from './CartBtn';
-import CartBtnIcon from './CartBtnIcon';
-import CartNewBlankSpace from './CartNewBlankSpace';
+import { NavLink } from 'react-router-dom';
 
 const CartProductCard = (props) => {
 
@@ -33,11 +32,24 @@ const CartProductCard = (props) => {
 
   return (
     <div className="card m-2 border-0" style={{width:'19.6rem', display: "inline-block"}} key={props.loopItem.id}>
-        <img src={props.loopItem.pic} width={"100%"} className='img-fluid card-img' alt='product-card-img'/>
+
+        <NavLink 
+            className='p-0 m-0 nav-link fw-bold fst-italic text-start beigeTextColor fs-5' 
+            to={`/product-details/${props.loopItem.id}`}
+            // state={{
+            //     articuloId: props.loopItem.id,
+            //     articuloPic: props.loopItem.pic,
+            //     articuloName: props.loopItem.name,
+            //     articuloDescription: props.loopItem.description,
+            //     articuloPrice: props.loopItem.price,
+            // }} 
+            ><img src={props.loopItem.pic} width={"100%"} className='img-fluid card-img' alt='product-card-img'/>
+        </NavLink>
+        
         <div className="card-body overflow-auto">
-            <div className="row card-title mb-3">
+            <div className="row card-title mb-4">
                 <div className="col-10">
-                    <h5 className="fw-bold fst-italic text-start beigeTextColor">{props.loopItem.name}</h5>
+                    <h4 className='p-0 ps-2 fw-bold fst-italic text-start beigeTextColor fs-5'>{props.loopItem.name}</h4>
                 </div>
                 <div className="col-2">
                     <a className='btn border-0 p-0' data-bs-toggle="collapse" href={`#cardCollapseBox${props.loopItem.id}`} role="button">
@@ -45,9 +57,8 @@ const CartProductCard = (props) => {
                     </a>
                 </div>
             </div>
-            {/* <p className="text-muted">{props.loopItem.id}</p> */}
-            <p className="card-text text-start mb-4 beigeTextColor ms-2 me-2">{props.loopItem.description}</p>
-            <div className='row'>
+           
+            <div className='row mb-3'>
                 <div className="col-6 text-start">
                     <h3 className='ms-3'>
                         <i className="bi bi-cart3 position-relative beigeTextColor">

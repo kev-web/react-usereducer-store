@@ -32,7 +32,7 @@ const CartDetailsRow = (props) => {
                 </div>
             </td>
             <td className='p-0 m-0'>
-                <div className="row m-0 p-1">
+                <div className="row m-0 p-0">
                     <div className="col-sm-6 p-0">
                         <CartInputBoxQuantity theState={props.actualStateTwo} cycledItem={props.currentItem} dispatchMethodBox={props.dispatchMethod}/>
                     </div>
@@ -41,15 +41,15 @@ const CartDetailsRow = (props) => {
                             <CartBtn 
                                 btnType={'button'} 
                                 btnValue={props.currentItem.id} 
-                                btnClass={'btn btn-secondary btn-sm fs-6 fw-bold'} 
+                                btnClass={'btn btn-secondary btn-sm fw-bold'} 
                                 mainText={'↓'} 
                                 onClickFunc={removeItemFromCart2Handler}/>
                             <CartBtn 
-                            btnType={'button'} 
-                            btnValue={props.currentItem.id} 
-                            btnClass={'btn btn-primary btn-sm fs-6 fw-bold'} 
-                            mainText={'↑'} 
-                            onClickFunc={addItemToCart2Handler}/>
+                                btnType={'button'} 
+                                btnValue={props.currentItem.id} 
+                                btnClass={'btn btn-primary btn-sm fw-bold'} 
+                                mainText={'↑'} 
+                                onClickFunc={addItemToCart2Handler}/>
                         </div>
                     </div>
                 </div>

@@ -6,13 +6,12 @@ import MainCartComponent from './storeComponents/MainCartComponent';
 
 
 
-
 function App() {
 
   return (
     <div>
       <CartNavbar />
-      <MainCartComponent />
+      <MainCartComponent /> 
     </div>
   );
 }

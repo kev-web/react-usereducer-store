@@ -6,6 +6,7 @@ import MainCartProducts from './MainCartProducts';
 import MainCart from './MainCart';
 import CartModal from './CartModal';
 import PDFGenerator from './PDFGenerator';
+import CartCardDetails from './CartCardDetails'
 import CartDetailsLogo from './CartDetailsLogo';
 // import CartFormLogo from './CartFormLogo';
 // import CartForm from './CartForm';
@@ -213,11 +214,14 @@ function MainCartComponent() {
             <PDFGenerator mainState={mainState} />
             <CartModal dispatchMethod={dispatch} actualState={mainState}/>
 
-            
-
             <Routes>
+                {/* Home Route */}
                 <Route path='/' element={<MainCartHome actualState={mainState}/>}/>
+
+                {/* Form Route */}
                 <Route path='form-page' element={<MainCartForm dispatchMethod={dispatch}/>}/>
+
+                {/* Products Route */}
                 <Route 
                     path='products-page' 
                     element={<MainCartProducts  
@@ -227,6 +231,8 @@ function MainCartComponent() {
                                 dispatchMethod={dispatch}
                                 />}
                 />
+
+                {/* Cart Route */}
                 <Route 
                     path='cart-page' 
                     element={<MainCart 
@@ -235,77 +241,22 @@ function MainCartComponent() {
                                 removeItemFromCart={handleRemoveFromCart} 
                                 dispatchMethod={dispatch}/>}
                 />
+
+                {/* Product Details Route */}
+                <Route 
+                    path='product-details/:itemToShow' 
+                    element={<CartCardDetails 
+                                addArticuloToCart={handleAddToCart}
+                                removeArticuloFromCart={handleRemoveFromCart}
+                                mainState={mainState}
+                            />}
+                />
+
+
+              
+
+
             </Routes>
-
-
-            {/* <div className='fixedBox border-top border-warning border-3'>
-                <div className="row align-items-center">
-                    <div className='col-6 col-sm-11 text-end'>
-                        <h6 className='beigeTextColor fst-italic'>App Products:&nbsp;<span className='text-light fs-4 fw-bold'>{mainState.products.length}</span></h6>
-                    </div>
-                    <div className='col-6 col-sm-1 text-end'>
-                        <CartDetailsLogo 
-                            displaySize={'display-6'} 
-                            badgeTextColor={'text-light'} 
-                            textColor={'beigeTextColor'}
-                            circlePadding={'p-1'} 
-                            alignText={'text-center'}
-                            fontSize={14} 
-                            pillColorBg={'bg-danger'} 
-                            actualState={mainState}/>
-                    </div>
-                </div>
-            </div> */}
-      
-
-            {/* <div className='container-fluid p-0'>
-                <div className="container-fluid" id='topHomeContainer'>
-                    <div className='container p-0 pt-0'>
-                        <div className="row justify-content-around">
-                            <div className="col-sm-4 p-3 p-lg-4 mt-3 mb-5">
-                                <CartFormLogo />
-                                <CartForm dispatchMethod={dispatch}/>
-                            </div>
-                            <div className="col-sm-7 p-2 p-lg-4 mt-3 mb-5" >
-                                <CartDetailsLogo actualState={mainState}/>
-                                <table className="table table-borderless">
-                                    <thead className='border-bottom border-top'>
-                                        <tr className='text-center align-middle' style={{height: 60}} id='tableHead'>
-                                            <th scope="col" style={{width: "25%"}}><h5>Item</h5></th>
-                                            <th scope='col' style={{width: "12%"}}>&nbsp;</th>
-                                            <th scope="col" style={{width: "17%"}}><h5>Qty</h5></th>
-                                            <th scope="col" style={{width: "23%"}}><h5>Price</h5></th>
-                                            <th scope="col" style={{width: "23%"}}><h5>SubT</h5></th>
-                                        </tr>
-                                    </thead>
-                                    <CartDetails 
-                                    actualState={mainState} 
-                                    addItemToCart={handleAddToCart} 
-                                    removeItemFromCart={handleRemoveFromCart} 
-                                    dispatchMethod={dispatch}
-                                    />
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="container-fluid pt-5 pb-5" id='bottomHomeContainer'>
-                    <div className="container p-0 pt-5 text-center">
-                        <CartProductsLogo />
-                        {
-                            mainState.products.map(item => (
-                                <CartProductCard 
-                                    key={item.id} 
-                                    loopItem={item} 
-                                    addToCart={handleAddToCart} 
-                                    removeFromCart={handleRemoveFromCart} 
-                                    currentState={mainState}
-                                    dispatchMethod={dispatch}/>
-                            ))
-                        }
-                    </div>
-                </div>
-            </div>  */}
         </div>
     )
 }

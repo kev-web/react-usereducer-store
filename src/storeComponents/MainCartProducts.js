@@ -1,7 +1,6 @@
 import React from 'react'
 import CartProductsLogo from './CartProductsLogo'
 import CartProductCard from './CartProductCard'
-import CartCardDetails from './CartCardDetails'
 
 const MainCartProducts = (props) => {
   return (
@@ -27,7 +26,6 @@ const MainCartProducts = (props) => {
       </div>
 
 
-      <CartCardDetails />
 
 
     </div>

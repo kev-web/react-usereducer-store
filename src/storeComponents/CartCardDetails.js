@@ -1,36 +1,78 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import CartBtn from './CartBtn';
 
-const CartCardDetails = () => {
-  return (
-    <div className='container mt-5 mb-5'>
-        <div className="row align-items-center m-0">
-            <div className="col-sm-6 p-0">
-                <img src="https://source.unsplash.com/random/800x800/?$car,city" className='img-fluid' alt="product-details-image" />
-            </div>
-            <div className="col-sm-6 p-2 mt-3 mt-sm-0 p-sm-5">
-                <h1 className='display-3 mb-2 mb-sm-5'>Product Name</h1>
-                <p className='text-muted text-end mb-4'>ID: 123hgj12h35h3kj41lk2j3</p>
-                <p className='mb-4 text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, minus non, quis aut iure ab cumque 
-                                    tempore enim quas vero illum dignissimos asperiores! Labore quam aliquid earum aut magni consequatur.</p>
-                <p className='fs-4 fst-italic'>Quantity in Cart: 8</p>
-                <p className='fs-2 text-end mb-5 fw-bold'>$ 14.99</p>
-                <div className="p-0 text-center text-sm-end">
-                    <button className='btn btn-outline-danger mb-3 mb-sm-0 me-2 me-sm-3'>Remove from Cart</button>
-                    <button className="btn btn-primary mb-3 mb-sm-0">Add To Cart</button>
+
+const CartCardDetails = (props) => {
+
+    //This is when we pass props using Navlink, we need to use "useLocation()" hook:
+    // const location = useLocation();
+    //We destructure it:
+    // const { articuloId, articuloPic, articuloName, articuloDescription, articuloPrice } = location.state
+    //***OR we can use in the JSX***:
+    // location.state.articuloId
+    // location.state.articuloName
+    //etc...
+
+    //----------Cart Button handlers--------------------:
+    const cardDetailsAddToCartHandler = (e) => {
+        props.addArticuloToCart(e)
+    }
+
+    const cardDetailsRemoveFromCartHandler = (e) => {
+        props.removeArticuloFromCart(e)
+    }
+
+    //-----------Extracting the URL params--------------:
+    //Initialize:
+    const params = useParams();
+    //Get the object value of the url key ""
+    const itemToShow = params.itemToShow
+
+
+    console.log(props.mainState.products.filter(item => item.id === itemToShow))
+
+    const elementArray = props.mainState.products.filter(item => item.id === itemToShow)
+    const [ itemFound ] = elementArray
+
+    return (
+        <div className='container mt-5 mb-5'>
+
+            {/* <div className="container p-3 border">
+                <p className='text-danger lead'>The url value of key "itemToShow" is: {itemToShow}</p>
+                <p>{JSON.stringify(itemFound)}</p>
+            </div> */}
+            
+            <div className="row align-items-center m-0">
+                <div className="col-sm-6 p-0">
+                    <img src={itemFound.pic} className='img-fluid' alt="product-details-image" />
+                </div>
+                <div className="col-sm-6 p-2 mt-3 mt-sm-0 p-sm-5">
+                    <h1 className='display-3 mb-2 mb-sm-5'>{itemFound.name}</h1>
+                    <p className='text-muted text-end'>In Cart: {props.mainState.cart.filter(element=>element.id === itemFound.id).length}</p>
+                    <p className='text-muted text-end mb-4'>Product Id:&nbsp;{itemFound.id}</p>
+                    <p className='mb-5 text-justify'>{itemFound.description}</p>
+                    <p className='fs-2 text-end mb-5 fw-bold'>${itemFound.price}</p>
+                    <div className="p-0 text-center text-sm-end">
+                        <CartBtn 
+                            btnType={'button'} 
+                            btnValue={itemFound.id} 
+                            btnClass={'btn btn-warning me-2 mb-2'} 
+                            mainText={'Remove Cart'} 
+                            onClickFunc={cardDetailsRemoveFromCartHandler}
+                            />
+                        <CartBtn 
+                            btnType={'button'} 
+                            btnValue={itemFound.id} 
+                            btnClass={'btn btn-primary mb-2'} 
+                            mainText={'Add Cart'} 
+                            onClickFunc={cardDetailsAddToCartHandler}
+                            />
+                    </div>
                 </div>
             </div>
         </div>
-        <div className="row m-0">
-            <div className="col-sm-6 p-0">
-                <img src="https://source.unsplash.com/random/800x800/?$vehicle,beach" className='img-fluid' alt="product-details-image" />
-            </div>
-            <div className="col-sm-6 p-0">
-                <img src="https://source.unsplash.com/random/800x800/?$store,blue" className='img-fluid' alt="product-details-image" />
-            </div>
-        </div>
-        
-    </div>
-  )
+    )
 }
 
 export default CartCardDetails
