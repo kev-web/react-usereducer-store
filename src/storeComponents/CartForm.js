@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {v4 as uuidv4} from "uuid";
 import CartBtn from './CartBtn'
 import CartBtnIcon from './CartBtnIcon'
@@ -25,6 +25,14 @@ const CartForm = (props) => {
       e.target.description.value = '';
       e.target.price.value = '';
   };
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      props.dispatchMethod({
+        type: 'form-message',
+      })
+    }, 10000)
+  },[props.mainState.formMessage])
 
 
   return (

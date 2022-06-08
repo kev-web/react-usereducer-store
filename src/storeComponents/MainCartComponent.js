@@ -31,7 +31,8 @@ const initialValue = {
         productPrice: '',
         productPic: '',
         productAddedToCart: ''
-    }
+    },
+    formMessage: false
 }
 
 //Reducer function:
@@ -39,7 +40,7 @@ const reducer = (state, action) => {
     switch(action.type){
 
         case 'add-item':
-            return {...state, products: [...state.products, action.payload]}
+            return {...state, products: [...state.products, action.payload], formMessage: true}
 
         case 'delete-item':
             let newArray = [...state.products];
@@ -167,6 +168,9 @@ const reducer = (state, action) => {
 
             return {...state, cart: otherItems}
 
+        case 'form-message':
+            return  {...state, formMessage: false}
+
         default:
             return state;
     }
@@ -219,7 +223,7 @@ function MainCartComponent() {
                 <Route path='/' element={<MainCartHome actualState={mainState}/>}/>
 
                 {/* Form Route */}
-                <Route path='form-page' element={<MainCartForm dispatchMethod={dispatch}/>}/>
+                <Route path='form-page' element={<MainCartForm dispatchMethod={dispatch} mainState={mainState}/>}/>
 
                 {/* Products Route */}
                 <Route 

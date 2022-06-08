@@ -49,6 +49,24 @@
     
 }
 
+
+#formMessage {
+    animation-name: sent-message;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    background-color: #eb5045;
+    color: beige;
+}
+
+@keyframes sent-message {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#formMessage2{
+    height: 41px;
+}
+
 .form-label{
     font-size: 16px;
 }
