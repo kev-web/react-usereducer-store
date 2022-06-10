@@ -54,18 +54,17 @@
     animation-name: sent-message;
     animation-duration: 6s;
     animation-timing-function: ease;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+   border-radius: 15px;
     background-color: #da3428;
     color: rgb(226, 226, 217);
 }
 
 @keyframes sent-message {
     0% {opacity: 0; transform: translate(0px, -41px);}
-    25%{opacity: 1; transform: translate(0px, 0px);}
-    50% {opacity: 1; transform: translate(0px, 0px);}
+    25%{opacity: 1; transform: translate(0px, 60px);}
+    50% {opacity: 1;}
     75% {opacity: 1;}
-    100% {opacity: 0; transform: translate(0px, 0px);}
+    100% {opacity: 0;transform: translate(0px, 60px);}
 }
 
 #formMessage2{

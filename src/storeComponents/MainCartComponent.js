@@ -43,8 +43,8 @@ const reducer = (state, action) => {
     switch(action.type){
 
         case 'add-item':
-            // return {...state, products: [...state.products, action.payload], formMessage: true, formButtonAnimate: true}
-            return {...state, formMessage: true, formButtonAnimate: true}
+            return {...state, products: [...state.products, action.payload], formMessage: true, formButtonAnimate: true}
+            // return {...state, formMessage: true, formButtonAnimate: true}
 
         case 'delete-item':
             let newArray = [...state.products];
