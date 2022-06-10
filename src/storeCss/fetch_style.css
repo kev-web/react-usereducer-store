@@ -52,23 +52,41 @@
 
 #formMessage {
     animation-name: sent-message;
-    animation-duration: 10s;
+    animation-duration: 6s;
     animation-timing-function: ease;
-    background-color: #eb5045;
-    color: beige;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #da3428;
+    color: rgb(226, 226, 217);
 }
 
 @keyframes sent-message {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+    0% {opacity: 0; transform: translate(0px, -41px);}
+    25%{opacity: 1; transform: translate(0px, 0px);}
+    50% {opacity: 1; transform: translate(0px, 0px);}
+    75% {opacity: 1;}
+    100% {opacity: 0; transform: translate(0px, 0px);}
 }
 
 #formMessage2{
-    height: 41px;
+    height: 40px;
 }
 
 .form-label{
     font-size: 16px;
+}
+
+.formBtnAnimation{
+    animation-name: form-btn-animation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    border: none;
+}
+
+@keyframes form-btn-animation {
+    0%{background-color: #ffc107; transform: scale(1.0) rotateY(360deg); color: black;}
+    50%{background-color:rgba(73, 228, 255, 0.877); transform: scale(1.15); color: black;}
+    100%{background-color: #ffc107; transform: scale(1.0); color: black;}
 }
 
 table 
@@ -88,8 +106,17 @@ table
     border-radius: 16px;
 }
 
+.card-img:hover{
+    transform: scale(1.05);
+}
+
 .beigeTextColor{
     color: rgb(221, 221, 198);
+}
+
+.productDetailsId{
+    font-size: 12px;
+    font-style: italic;
 }
 
 /* .cardTextColor{
@@ -125,12 +152,27 @@ td{
 .menuBoxBtn {
     background-color: #ffc107;
     border-radius: 10%;
-    box-shadow: 5px 5px 30px rgb(158, 158, 158);
+    box-shadow: 5px 5px 12px rgb(87, 87, 87);
+}
+
+.menuBoxBtn-animation {
+    background-color: #ffc107;
+    border-radius: 10%;
+    box-shadow: 5px 5px 12px rgb(87, 87, 87);
+    animation-name: menu-home-btn;
+    animation-duration: 1.5s;
+    /* animation-timing-function: ease; */
     /* border: 1px solid rgb(6, 128, 150); */
 }
 
 .menuBoxBtn:hover {
-    background-color: #e4ab00;
+    background-color: #d39e00;
+}
+
+@keyframes menu-home-btn {
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(360deg);}
+    100%{transform: rotate(0deg);}
 }
 
 /* .cartDiv {

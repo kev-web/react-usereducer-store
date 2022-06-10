@@ -1,10 +1,26 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {v4 as uuidv4} from "uuid";
 import CartBtn from './CartBtn'
 import CartBtnIcon from './CartBtnIcon'
 import CartNewBlankSpace from './CartNewBlankSpace';
 
 const CartForm = (props) => {
+
+    const handleFormMessage = () => {
+      setTimeout(()=>{
+        props.dispatchMethod({
+          type: 'form-message'
+        })
+      }, 6000)
+    }
+
+    const handleFormButtonAnimation = () => {
+      setTimeout(()=>{
+        props.dispatchMethod({
+          type: 'form-btn-animate'
+        })
+      }, 1500)
+    }
 
     const handleSubmitForm = (e) => {
       e.preventDefault()
@@ -24,39 +40,38 @@ const CartForm = (props) => {
       e.target.product.value = '';
       e.target.description.value = '';
       e.target.price.value = '';
+      handleFormButtonAnimation();
+      handleFormMessage();
   };
-
-  useEffect(()=>{
-    setTimeout(()=>{
-      props.dispatchMethod({
-        type: 'form-message',
-      })
-    }, 10000)
-  },[props.mainState.formMessage])
 
 
   return (
 
     <form onSubmit={handleSubmitForm} className='mt-5 mb-3' autoComplete='off'>
         <div className="form-floating">
-          <input name='product' type="text" className='form-control mb-3' id='productName' placeholder='Enter name..' autoComplete='off' required/>
+          <input name='product' type="text" className='form-control mb-3' id='productName' placeholder='Enter name..' autoComplete='off' />
           <label htmlFor="productName" className='form-label text-secondary'>Product Name:</label>
         </div>
         
         <div className="form-floating">
-          <textarea name="description" id="productDescription" style={{height: '125px'}} maxLength="150" className='form-control mb-3' placeholder='Enter Description...' autoComplete='off' required></textarea>
+          <textarea name="description" id="productDescription" style={{height: '125px'}} maxLength="150" className='form-control mb-3' placeholder='Enter Description...' autoComplete='off' ></textarea>
           <label htmlFor="productDescription" className='form-label text-secondary'>Description:</label>
         </div>
 
         <div className="form-floating">
-          <input name='price' type="number" step="0.01" min="0" className='form-control mb-3' id='productPrice' placeholder='Enter Price...' autoComplete='off' required/>
+          <input name='price' type="number" step="0.01" min="0" className='form-control mb-3' id='productPrice' placeholder='Enter Price...' autoComplete='off' />
           <label htmlFor="productPrice" className='form-label text-secondary'>Price:</label>
         </div>
 
         <div className='text-end'>
           <CartBtn 
             btnType={'submit'} 
-            btnClass={'btn btn-warning mt-3'} 
+            btnClass={
+              props.mainState.formButtonAnimate ? 
+                'btn mt-3 formBtnAnimation'
+               : 
+                'btn btn-warning mt-3'
+              } 
             mainText={'Submit'}
             btnIconClass='bi bi-cloud-arrow-up fs-5'
             />

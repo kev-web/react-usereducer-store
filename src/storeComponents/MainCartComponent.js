@@ -8,6 +8,7 @@ import CartModal from './CartModal';
 import PDFGenerator from './PDFGenerator';
 import CartCardDetails from './CartCardDetails'
 import CartDetailsLogo from './CartDetailsLogo';
+import CartNavbar from './CartNavbar';
 // import CartFormLogo from './CartFormLogo';
 // import CartForm from './CartForm';
 // import CartProductCard from './CartProductCard';
@@ -32,7 +33,9 @@ const initialValue = {
         productPic: '',
         productAddedToCart: ''
     },
-    formMessage: false
+    formMessage: false,
+    formButtonAnimate: false,
+    homeBtnAnimation: false,
 }
 
 //Reducer function:
@@ -40,7 +43,8 @@ const reducer = (state, action) => {
     switch(action.type){
 
         case 'add-item':
-            return {...state, products: [...state.products, action.payload], formMessage: true}
+            // return {...state, products: [...state.products, action.payload], formMessage: true, formButtonAnimate: true}
+            return {...state, formMessage: true, formButtonAnimate: true}
 
         case 'delete-item':
             let newArray = [...state.products];
@@ -171,6 +175,18 @@ const reducer = (state, action) => {
         case 'form-message':
             return  {...state, formMessage: false}
 
+
+        case 'form-btn-animate':
+            return {...state, formButtonAnimate: false}
+
+
+        case 'home-menu-btn-animate':
+            console.log(action.payload)
+            return {...state, homeBtnAnimation: true}
+
+        case 'home-menu-btn-animate-off':
+            return {...state, homeBtnAnimation: false}
+
         default:
             return state;
     }
@@ -215,12 +231,18 @@ function MainCartComponent() {
 
         <div>
 
+            <CartNavbar mainState={mainState}/>
+
             <PDFGenerator mainState={mainState} />
             <CartModal dispatchMethod={dispatch} actualState={mainState}/>
 
             <Routes>
                 {/* Home Route */}
-                <Route path='/' element={<MainCartHome actualState={mainState}/>}/>
+                <Route path='/' element={<MainCartHome 
+                                            actualState={mainState} 
+                                            dispatchMethod={dispatch} 
+                                            />
+                                        }/>
 
                 {/* Form Route */}
                 <Route path='form-page' element={<MainCartForm dispatchMethod={dispatch} mainState={mainState}/>}/>

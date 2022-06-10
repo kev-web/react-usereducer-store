@@ -33,10 +33,10 @@ const CartDetails = (props) => {
             }
         })}
 
-        <tr className='text-center align-middle border-top border-bottom' style={{height: 60}}>
+        <tr className='text-center align-middle border-primary border-top border-bottom' style={{height: 60}}>
           <td></td>
           <td className='d-none d-md-block'></td>
-          <td colSpan={3}>
+          <td colSpan={3}  className='pt-4 pb-4'>
               <CartDetailsSubtotal presentState={props.actualState}/>
               <CartDetailsTax presentState={props.actualState}/>
               <CartDetailsTotal presentState={props.actualState}/>

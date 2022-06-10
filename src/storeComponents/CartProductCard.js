@@ -33,6 +33,7 @@ const CartProductCard = (props) => {
   return (
     <div className="card m-2 border-0" style={{width:'19.6rem', display: "inline-block"}} key={props.loopItem.id}>
 
+    
         <NavLink 
             className='p-0 m-0 nav-link fw-bold fst-italic text-start beigeTextColor fs-5' 
             to={`/product-details/${props.loopItem.id}`}
@@ -45,6 +46,8 @@ const CartProductCard = (props) => {
             // }} 
             ><img src={props.loopItem.pic} width={"100%"} className='img-fluid card-img' alt='product-card-img'/>
         </NavLink>
+      
+        
         
         <div className="card-body overflow-auto">
             <div className="row card-title mb-4">

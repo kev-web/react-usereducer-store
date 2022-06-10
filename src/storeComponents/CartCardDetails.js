@@ -38,22 +38,28 @@ const CartCardDetails = (props) => {
     return (
         <div className='container mt-5 mb-5'>
 
-            {/* <div className="container p-3 border">
-                <p className='text-danger lead'>The url value of key "itemToShow" is: {itemToShow}</p>
-                <p>{JSON.stringify(itemFound)}</p>
-            </div> */}
-            
             <div className="row align-items-center m-0">
-                <div className="col-sm-6 p-0">
+                <div className="col-sm-6 p-1 p-sm-0">
                     <img src={itemFound.pic} className='img-fluid' alt="product-details-image" />
                 </div>
-                <div className="col-sm-6 p-2 mt-3 mt-sm-0 p-sm-5">
-                    <h1 className='display-3 mb-2 mb-sm-5'>{itemFound.name}</h1>
-                    <p className='text-muted text-end'>In Cart: {props.mainState.cart.filter(element=>element.id === itemFound.id).length}</p>
-                    <p className='text-muted text-end mb-4'>Product Id:&nbsp;{itemFound.id}</p>
-                    <p className='mb-5 text-justify'>{itemFound.description}</p>
-                    <p className='fs-2 text-end mb-5 fw-bold'>${itemFound.price}</p>
-                    <div className="p-0 text-center text-sm-end">
+                <div className="col-sm-6 p-4 pt-0 p-sm-5">
+                    <h1 className='display-3 mb-4 mb-sm-5 text-center'>{itemFound.name}</h1>
+
+                    <h2 className='text-center mb-3'>
+                        <i className="bi bi-cart3 position-relative text-dark">
+                            <span className="position-absolute top-0 start-90 translate-middle badge rounded-pill p-1 bg-success">
+                                <p style={{fontSize:14, padding: 0, margin: 0, color: 'white'}}>
+                                    {props.mainState.cart.filter(element=>element.id === itemFound.id).length}
+                                </p>
+                            </span>
+                        </i>
+                    </h2>
+
+
+                    <p className='text-muted text-center mb-4 productDetailsId'>Id:&nbsp;{itemFound.id}</p>
+                    <p className='pb-4 mb-2 text-start text-sm-center'>{itemFound.description}</p>
+                    <p className='fs-1 text-end text-sm-center mb-4 pe-3'>${itemFound.price}</p>
+                    <div className="p-0 text-center">
                         <CartBtn 
                             btnType={'button'} 
                             btnValue={itemFound.id} 

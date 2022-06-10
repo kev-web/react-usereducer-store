@@ -32,7 +32,7 @@ const CartDetailsRow = (props) => {
                 </div>
             </td>
             <td className='p-0 m-0'>
-                <div className="row m-0 p-0">
+                <div className="row m-0 p-0 pb-1 pt-1">
                     <div className="col-sm-6 p-0">
                         <CartInputBoxQuantity theState={props.actualStateTwo} cycledItem={props.currentItem} dispatchMethodBox={props.dispatchMethod}/>
                     </div>
