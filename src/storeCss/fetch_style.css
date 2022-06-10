@@ -61,10 +61,10 @@
 
 @keyframes sent-message {
     0% {opacity: 0; transform: translate(0px, -41px);}
-    25%{opacity: 1; transform: translate(0px, 60px);}
+    25%{opacity: 1; transform: translate(0px, 100px);}
     50% {opacity: 1;}
     75% {opacity: 1;}
-    100% {opacity: 0;transform: translate(0px, 60px);}
+    100% {opacity: 0;transform: translate(0px, 100px);}
 }
 
 #formMessage2{
