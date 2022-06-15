@@ -8,71 +8,75 @@ const MainCartHome = (props) => {
 
     let navigate = useNavigate()
 
-    const handleNavigation = (btnEventValue) => {
-        setTimeout(()=>{
-            props.dispatchMethod({
-                type: 'home-menu-btn-animate-off',
-            })
-            if(btnEventValue === 'main-form'){
-                navigate('/form-page')
-            } else if (btnEventValue === 'main-products'){
-                navigate('/products-page')
-            } else if (btnEventValue === 'main-cart'){
-                navigate('/cart-page')
-            }
-        }, 1500)
-    }
-
-    const handleMenuBtnAnimation = (e) => {
-        e.preventDefault()
-        let btnValue = e.target.value
-        props.dispatchMethod({
-            type: 'home-menu-btn-animate',
-        })
-        
-        handleNavigation(btnValue)        
-    }
-
     return (
         <div className="m-1 m-sm-0">
             <div className='container pt-5 pb-5 p-sm-5 mt-5 mb-5'>
                 <div className="row p-sm-5">
                     <div className="col-sm-4 text-center p-3 p-sm-5">
-                        <button 
-                               
-                                className={props.actualState.homeBtnAnimation  ?
-                                        "btn menuBoxBtn-animation btn-lg p-5"
-                                    :
-                                        "btn menuBoxBtn btn-lg p-5"
-                                    }
-                                value={'main-form'}
-                                onClick={handleMenuBtnAnimation}>
+                        <button  
+                            className={(props.actualState.homeBtnAnimation === true) && (props.actualState.homeBtnValue == 'main-form') ?
+                                    "btn menuBoxBtn-animation btn-lg p-5"
+                                :
+                                    "btn menuBoxBtn btn-lg p-5"
+                                }
+                            onClick={()=>{
+                                props.dispatchMethod({
+                                    type: 'home-menu-btn-animate',
+                                    payload: 'main-form'
+                                })
+                                setTimeout(()=>{
+                                    props.dispatchMethod({
+                                        type: 'home-menu-btn-animate-off'
+                                    })
+                                    navigate('/form-page')
+                                }, 1000)
+                                }}>
                             <CartFormLogo textColor={'text-secondary'}/>
                         </button>
                     </div>
 
                     <div className="col-sm-4 text-center p-3 p-sm-5">
                         <button 
-                                className={props.actualState.homeBtnAnimation ?
-                                        "btn menuBoxBtn-animation btn-lg p-5"
-                                    :
-                                        "btn menuBoxBtn btn-lg p-5"
-                                    }
-                                value={'main-products'}
-                                onClick={handleMenuBtnAnimation}>
+                            className={(props.actualState.homeBtnAnimation === true) && (props.actualState.homeBtnValue == 'main-products') ?
+                                    "btn menuBoxBtn-animation btn-lg p-5"
+                                :
+                                    "btn menuBoxBtn btn-lg p-5"
+                                }
+                            onClick={()=>{
+                                props.dispatchMethod({
+                                    type: 'home-menu-btn-animate',
+                                    payload: 'main-products'
+                                })
+                                setTimeout(()=>{
+                                    props.dispatchMethod({
+                                        type: 'home-menu-btn-animate-off'
+                                    })
+                                    navigate('/products-page')
+                                }, 1000)
+                                }}>
                             <CartProductsLogo textColor={'text-secondary'}/>
                         </button>
                     </div>
 
                     <div className="col-sm-4 text-center p-3 p-sm-5">
                         <button 
-                                className={props.actualState.homeBtnAnimation ?
-                                        "btn menuBoxBtn-animation btn-lg p-5"
-                                    :
-                                        "btn menuBoxBtn btn-lg p-5"
-                                    }
-                                value={'main-cart'}
-                                onClick={handleMenuBtnAnimation}>
+                            className={(props.actualState.homeBtnAnimation === true) && (props.actualState.homeBtnValue == 'main-cart')  ?
+                                    "btn menuBoxBtn-animation btn-lg p-5"
+                                :
+                                    "btn menuBoxBtn btn-lg p-5"
+                                }
+                            onClick={()=>{
+                                props.dispatchMethod({
+                                    type: 'home-menu-btn-animate',
+                                    payload: 'main-cart'
+                                })
+                                setTimeout(()=>{
+                                    props.dispatchMethod({
+                                        type: 'home-menu-btn-animate-off'
+                                    })
+                                    navigate('/cart-page')
+                                }, 1000)
+                                }}>
                             <CartDetailsLogo 
                                 displaySize={'display-3'} 
                                 textColor={'text-secondary'} 

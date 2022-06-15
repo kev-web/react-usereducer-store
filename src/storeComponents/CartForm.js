@@ -49,17 +49,17 @@ const CartForm = (props) => {
 
     <form onSubmit={handleSubmitForm} className='mt-5 mb-3' autoComplete='off'>
         <div className="form-floating">
-          <input name='product' type="text" className='form-control mb-3' id='productName' placeholder='Enter name..' autoComplete='off' />
+          <input name='product' type="text" className='form-control mb-3' id='productName' placeholder='Enter name..' autoComplete='off' required />
           <label htmlFor="productName" className='form-label text-secondary'>Product Name:</label>
         </div>
         
         <div className="form-floating">
-          <textarea name="description" id="productDescription" style={{height: '125px'}} maxLength="150" className='form-control mb-3' placeholder='Enter Description...' autoComplete='off' ></textarea>
+          <textarea name="description" id="productDescription" style={{height: '125px'}} maxLength="150" className='form-control mb-3' placeholder='Enter Description...' autoComplete='off' required ></textarea>
           <label htmlFor="productDescription" className='form-label text-secondary'>Description:</label>
         </div>
 
         <div className="form-floating">
-          <input name='price' type="number" step="0.01" min="0" className='form-control mb-3' id='productPrice' placeholder='Enter Price...' autoComplete='off' />
+          <input name='price' type="number" step="0.01" min="0" className='form-control mb-3' id='productPrice' placeholder='Enter Price...' autoComplete='off' required/>
           <label htmlFor="productPrice" className='form-label text-secondary'>Price:</label>
         </div>
 

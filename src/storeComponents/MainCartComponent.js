@@ -36,6 +36,7 @@ const initialValue = {
     formMessage: false,
     formButtonAnimate: false,
     homeBtnAnimation: false,
+    homeBtnValue: ''
 }
 
 //Reducer function:
@@ -181,11 +182,12 @@ const reducer = (state, action) => {
 
 
         case 'home-menu-btn-animate':
-            console.log(action.payload)
-            return {...state, homeBtnAnimation: true}
+            console.log("animation starts...")
+            return {...state, homeBtnAnimation: true, homeBtnValue: action.payload}
 
         case 'home-menu-btn-animate-off':
-            return {...state, homeBtnAnimation: false}
+            console.log("animation ended...")
+            return {...state, homeBtnAnimation: false, homeBtnValue: ''}
 
         default:
             return state;

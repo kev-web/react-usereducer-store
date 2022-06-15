@@ -54,17 +54,21 @@
     animation-name: sent-message;
     animation-duration: 6s;
     animation-timing-function: ease;
-   border-radius: 15px;
+    border-radius: 4px;
     background-color: #da3428;
     color: rgb(226, 226, 217);
+    position: fixed;
+    top: 10%;
+    left: 0%;
+    right: 0%;
 }
 
 @keyframes sent-message {
-    0% {opacity: 0; transform: translate(0px, -41px);}
-    25%{opacity: 1; transform: translate(0px, 100px);}
+    0% {opacity: 0;}
+    25%{opacity: 1;}
     50% {opacity: 1;}
     75% {opacity: 1;}
-    100% {opacity: 0;transform: translate(0px, 100px);}
+    100% {opacity: 0;}
 }
 
 #formMessage2{
@@ -83,8 +87,11 @@
 }
 
 @keyframes form-btn-animation {
-    0%{background-color: #ffc107; transform: scale(1.0) rotateY(360deg); color: black;}
-    50%{background-color:rgba(73, 228, 255, 0.877); transform: scale(1.15); color: black;}
+    /* 0%{background-color: #ffc107; transform: scale(1.0) rotateX(360deg); color: black;}
+    50%{background-color:rgba(10, 97, 112, 0.5); transform: scale(1.15); color: black;}
+    100%{background-color: #ffc107; transform: scale(1.0); color: black;} */
+    0%{background-color: #ffc107; transform: scale(1.0); color: black;}
+    50%{background-color: #fcc933; transform: scale(1.15); color: rgb(0, 0, 0); box-shadow: 5px 5px 30px rgb(0, 0, 0);}
     100%{background-color: #ffc107; transform: scale(1.0); color: black;}
 }
 
@@ -155,11 +162,11 @@ td{
 }
 
 .menuBoxBtn-animation {
-    background-color: #ffc107;
+    background-color: #d3d3d3;
     border-radius: 10%;
     box-shadow: 5px 5px 12px rgb(87, 87, 87);
     animation-name: menu-home-btn;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     /* animation-timing-function: ease; */
     /* border: 1px solid rgb(6, 128, 150); */
 }
@@ -170,8 +177,7 @@ td{
 
 @keyframes menu-home-btn {
     0%{transform: rotate(0deg);}
-    50%{transform: rotate(360deg);}
-    100%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
 }
 
 /* .cartDiv {
