@@ -81,17 +81,19 @@ const CartProductCard = (props) => {
             <CartBtn 
                 btnType={'button'} 
                 btnValue={props.loopItem.id} 
-                btnClass={'btn btn-warning me-2 mb-2'} 
+                btnClass={'btn btn-outline-warning me-2 mb-2'} 
                 mainText={'Remove Cart'} 
                 onClickFunc={removeCartHandler}/>
 
             <CartBtn 
                 btnType={'button'} 
                 btnValue={props.loopItem.id} 
-                btnClass={'btn btn-primary mb-2'} 
+                btnClass={'btn btn-outline-primary mb-2'} 
                 mainText={'Add Cart'} 
                 onClickFunc={addCartHandler}
                 />
+
+            <p className='text-light mb-0 p-0 pe-2 text-end'>{props.currentState.products.indexOf(props.loopItem)}</p>
 
 
             <div className="collapse p-0" id={`cardCollapseBox${props.loopItem.id}`}>

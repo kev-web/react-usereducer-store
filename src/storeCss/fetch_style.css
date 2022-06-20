@@ -54,21 +54,19 @@
     animation-name: sent-message;
     animation-duration: 6s;
     animation-timing-function: ease;
-    border-radius: 4px;
+    border-radius: 16px;
     background-color: #da3428;
     color: rgb(226, 226, 217);
-    position: fixed;
-    top: 10%;
-    left: 0%;
-    right: 0%;
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes sent-message {
-    0% {opacity: 0;}
-    25%{opacity: 1;}
+    0% {opacity: 0;left: 0px; top: 0px; }
+    25% {opacity: 1; left: 0px; top: 150px;}
     50% {opacity: 1;}
     75% {opacity: 1;}
-    100% {opacity: 0;}
+    100% {opacity: 0; left: 0px; top: 150px; }
 }
 
 #formMessage2{
@@ -133,6 +131,16 @@ table
     font-size: 14px;
 }
 
+.pagination-btn{
+    background-color: rgba(6, 128, 150, 0.877);
+    color: rgb(255, 255, 255);
+}
+
+.pagination-btn:hover{
+    background-color: rgba(1, 146, 172, 0.877);
+    color: rgb(255, 255, 255);
+}
+
 
 h4, h5{
     margin: 0;
@@ -162,7 +170,7 @@ td{
 }
 
 .menuBoxBtn-animation {
-    background-color: #d3d3d3;
+    background-color: #e4e4e4;
     border-radius: 10%;
     box-shadow: 5px 5px 12px rgb(87, 87, 87);
     animation-name: menu-home-btn;
